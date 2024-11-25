@@ -16,17 +16,17 @@ class Ship extends SpriteComponent with TapCallbacks {
     tujuan = position;
   }
 
-  void setTujuan(DragUpdateInfo info) {
+  void setTujuan(DragUpdateInfo info) { //DragUpdateInfo digunakan untuk menyimpan koordinat ketika kita mengklik/tap
     tujuan = info.eventPosition.global; //proses penyimpanan koordinat
     lookAt(tujuan); //agar ship bergerak ke arah tujuan
-    arah = tujuan - position; //menghitung arah
+    arah = tujuan - position; //menghitung arah 
     arah = arah.normalized(); //membuat pergerakannya per satuan
   }
 
   @override
   FutureOr<void> onLoad() async {
     sprite = Sprite(await Flame.images.load("ships/spaceShips_001.png"));
-    position = Vector2(100, 100); //x itu lebar, y itu tinggi
+    position = Vector2(100, 100); //x itu lebar, y itu tinggi 
     angle = -pi / 2; //berputar 90 derajat
     anchor = Anchor.center; //agar gambar berada di tengah
     // size = Vector2(100, 100); //mengubah ukuran gambar menjadi 100x100
