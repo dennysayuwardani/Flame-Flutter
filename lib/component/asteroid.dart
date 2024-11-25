@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flame/components.dart';
 
 class Asteroid extends SpriteComponent with HasGameRef {
-  double ukuran = 0.5;
+  double ukuran = 0.5; // Ini buat ngatur seberapa besar asteroidnya (standarnya kecil, 0.5)
   Asteroid({required this.ukuran}){
     scale = Vector2(ukuran, ukuran);  
   }
